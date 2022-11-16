@@ -1,0 +1,9 @@
+{
+  "name": "Airline",
+  "version": "1.0.0",
+  "description": "Book Flights & Travel the World",
+  "main": "index.js",
+  "repository": "git@github.com:aminlotfi/Airline.git",
+  "author": "Mohammad Amin Lotfi <a.lotfi1201@gmail.com>",
+  "license": "MIT"
+}
