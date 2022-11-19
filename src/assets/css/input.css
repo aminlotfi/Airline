@@ -53,6 +53,10 @@
         font-family: iranyekan, serif !important;
     }
 
+    body {
+        @apply bg-[#f6f6f6] dark:bg-black;
+    }
+
     input::-webkit-outer-spin-button,
     input::-webkit-inner-spin-button {
         -webkit-appearance: none;
@@ -65,4 +69,14 @@
 }
 
 @tailwind components;
+
+@layer components {
+    .text-title {
+        @apply text-[#1F2434] dark:text-white
+    }
+
+    .card-box {
+        @apply bg-white dark:bg-[#14151a] rounded-10
+    }
+}
 @tailwind utilities;

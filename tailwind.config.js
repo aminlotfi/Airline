@@ -4,6 +4,13 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
+      colors: {
+        primary: {
+          ultraLight: '#FFE19C',
+          light: '#FDB713',
+          dark: '#E3A107'
+        }
+      },
       spacing: {
         '8': '0.5rem',
         '16': '1rem',
