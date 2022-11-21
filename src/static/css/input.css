@@ -66,6 +66,10 @@
     input[type=number] {
         -moz-appearance: textfield;
     }
+
+    #app {
+        min-height: calc(100vh - 830px);
+    }
 }
 
 @tailwind components;

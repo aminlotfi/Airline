@@ -1,4 +1,9 @@
 import Landing from "./views/Landing.js";
+import TicketsList from "./views/TicketsList.js";
+import BuyTicket from "./views/BuyTicket.js";
+import Signup from "./views/Signup.js";
+import Login from "./views/Login.js";
+import Panel from "./views/Panel.js";
 
 const navigateTo = url => {
     history.pushState(null, null, url);
@@ -8,12 +13,13 @@ const navigateTo = url => {
 const router = async () => {
     const routes = [
         { path: "/", view: Landing },
-        // { path: "/posts", view: Posts },
-        // { path: "/posts/:id", view: PostView },
-        // { path: "/settings", view: Settings }
+        { path: "/ticket-list", view: TicketsList },
+        { path: "/buy-ticket", view: BuyTicket },
+        { path: "/login", view: Login },
+        { path: "/signup", view: Signup },
+        { path: "/panel", view: Panel }
     ];
 
-    // Test each route for potential match
     const potentialMatches = routes.map(route => {
         return {
             route: route,
@@ -21,7 +27,8 @@ const router = async () => {
         };
     });
 
-    let match = potentialMatches.find(potentialMatch => potentialMatch.isMatch !== null);
+
+    let match = potentialMatches.find(potentialMatch => potentialMatch.isMatch);
 
     if (!match) {
         match = {
