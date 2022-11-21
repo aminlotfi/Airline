@@ -13,5 +13,3 @@ app.get("/*", (req, res) => {
 const port = process.env.PORT || '3001';
 const server = http.createServer(app);
 server.listen(port);
-
-// app.listen(5620, () => console.log("Server running..."));
