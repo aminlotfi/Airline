@@ -3,7 +3,7 @@ import AbstractView from "./AbstractView.js";
 export default class extends AbstractView {
     constructor() {
         super();
-        this.setTitle("هواپیمایی شریف");
+        this.setTitle("هواپیمایی شریف | خانه");
     }
 
     async getHtml() {
@@ -39,7 +39,7 @@ export default class extends AbstractView {
                     <div class="rounded-20 w-full max-w-[270px] overflow-hidden group">
                         <img class="object-cover rounded-t-20 w-[270px] h-[150px] group-hover:scale-105 transition-all duration-500" src="static/img/box-3.jpg" alt="Box 3">
                         <div class="bg-white dark:bg-[#14151a] rounded-b-20 py-8 px-16">
-                            <span class="text-title text-[12px] md:text-[14px]">تضمین تغییر بلیت</span>
+                            <span class="text-title text-[12px] md:text-[14px]">تضمین تغییر بلیط</span>
                         </div>
                     </div>
                     <div class="rounded-20 w-full max-w-[270px] overflow-hidden group">
