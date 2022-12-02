@@ -80,7 +80,17 @@
     }
 
     .card-box {
-        @apply bg-white dark:bg-[#14151a] rounded-10
+        @apply bg-white dark:bg-[#292c34] rounded-10
     }
 }
 @tailwind utilities;
+
+@layer utilities {
+    .dir-rtl {
+        direction: rtl !important;
+    }
+
+    .dir-ltr {
+        direction: ltr !important;
+    }
+}
