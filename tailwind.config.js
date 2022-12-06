@@ -11,6 +11,10 @@ module.exports = {
           dark: '#E3A107'
         }
       },
+      borderColor: {
+        light: '#FDB713',
+        dark: '#E3A107'
+      },
       spacing: {
         '8': '0.5rem',
         '16': '1rem',
@@ -27,6 +31,9 @@ module.exports = {
         '104': '6.5rem',
         '112': '7rem',
         '120': '7.5rem',
+        '140': '10rem',
+        '160': '14rem',
+        '180': '18rem'
       },
       borderRadius: {
         5: '5px',
