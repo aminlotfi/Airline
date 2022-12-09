@@ -32,6 +32,10 @@ export default class extends AbstractView {
                 freeSeats: 4 + Math.round(Math.random() * 6),
                 price: (600 + Math.round(Math.random() * 200)) * 1000,
                 type: "economy",
+                passengersInfo: ({
+                    name: "شریف شریفی",
+                    nationalCode: "0251234567",
+                }).toLocaleString(),
                 isPurchased: true,
                 ...data,
             }, {
@@ -41,6 +45,10 @@ export default class extends AbstractView {
                 price: (600 + Math.round(Math.random() * 200)) * 1000,
                 type: "business",
                 isPurchased: true,
+                passengersInfo: {
+                    name: "شریف شریفی",
+                    nationalCode: "0251234567",
+                },
                 ...data,
             }, {
                 startTime: Date.now() + Math.floor((3 + Math.random() * 5)*60*60*1000),
@@ -48,6 +56,10 @@ export default class extends AbstractView {
                 freeSeats: 4 + Math.round(Math.random() * 6),
                 price: (600 + Math.round(Math.random() * 200)) * 1000,
                 type: "first-class",
+                passengersInfo: {
+                    name: "شریف شریفی",
+                    nationalCode: "0251234567",
+                },
                 isPurchased: true,
                 ...data,
             }
@@ -58,6 +70,7 @@ export default class extends AbstractView {
                 src="${item.src}"
                 dst="${item.dst}"
                 passenger="${item.passenger}"
+                passengersInfo="${item.passengersInfo}"
                 departing="${item.departing}"
                 startTime="${item.startTime}"
                 timeLength="${item.timeLength}"
@@ -74,8 +87,14 @@ export default class extends AbstractView {
         <main class="mx-auto w-full max-w-[1200px] px-16 xl:px-8">
             <div class="flex flex-col xl:flex-row items-start justify-start mt-24">
                 <div class="card-box flex flex-col items-start justify-start p-8 xl:max-w-[280px] border w-full">
-                    <div class="text-[14px] text-title border-b-[1px] w-full p-8 pt-0 cursor-pointer">حساب کاربری</div>
-                    <div id="logout" class="text-[14px] text-title w-full p-8 pb-0 text-[#dc3545] cursor-pointer">خروج از حساب کاربری</div>
+                    <div class="flex items-center justify-start text-[14px] text-title border-b-[1px] w-full p-8 pt-0 cursor-pointer">
+                        <img src="static/img/profile.svg" alt="profile" class="w-[20px] h-[20px] ml-8">
+                        <span>حساب کاربری</span>
+                    </div>
+                    <div id="logout" class="flex items-center justify-start text-[14px] text-title w-full p-8 pb-0 text-[#dc3545] cursor-pointer">
+                        <img src="static/img/logout.svg" alt="profile" class="w-[20px] h-[20px] ml-8">
+                        <span>خروج از حساب کاربری</span>
+                    </div>
                 </div>
                 <div class="flex flex-col xl:mr-16 w-full">
                     <div class="card-box flex items-center justify-between w-full p-16 mt-16 xl:mt-0">
