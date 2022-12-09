@@ -71,58 +71,54 @@ export default class extends AbstractView {
   }
 
   async getHtml(uniqueKey) {
-    return `
-        <div id="ticket-${uniqueKey}" class="flex flex-row bg-white border-black p-8 m-8 shadow-sm rounded-5">
-          <div class="flex flex-row items-center justify-between flex-1 p-4">
-              <div
-                  class="flex w-[60%] items-center py-6 px-2"
-              >
-                  <span class="src ml-2 text-left text-lg w-20"></span>
-                  <span class="startTime text-xl text-center font-bold w-[3rem]"></span>
-                  <span
-                      class="stops flex grow items-center justify-between text-grays-200 relative mx-3 md:mx-5 max-w-[12rem] text-[#aaa]"
-                      style="margin-left: 0.5rem;"
-
-                  >
-                      <svg
-                          viewBox="0 0 24 24"
-                          width="1rem"
-                          height="1rem"
-                          fill="currentColor"
-                      >
-                          <path
-                              d="M.601 12.008c0 .929.297 1.545 1.003 1.857.392.172.802.226 1.46.22l.362-.009 5.656-.24.26.368.326.493.42.659.87 1.41 1.573 2.626 1.678 2.855a2.204 2.204 0 0 0 1.858 1.155.9.9 0 0 0 .878-1.198l-3.018-8.582c-.008-.021-.002-.03.006-.03l6.447-.29.79 2.114.035.13c.257.593.77.862 1.287.761.61-.12 1.008-.711.889-1.322l-.005-.09.009-5.947c.05-.488-.338-1.007-.9-1.12-.546-.107-1.029.189-1.246.665l-.832 2.22-6.446-.29a.013.013 0 0 1-.011-.017l3.179-8.595a.9.9 0 0 0-.92-1.209l-.161.014c-.69.02-1.352.4-1.754 1.013L12.426 4.8l-1.21 2.02-.8 1.308-.54.86-.45.693-.238.347-.107.149-5.602-.264h-.623l-.16.007-.206.016c-1.287.127-1.889.767-1.889 2.072Z"
-                              fill-rule="evenodd"
-                          ></path>
-                      </svg>
-                      <div class="flex flex-col flex-1 relative">
-                          <div class="bg-[#ccc] h-[1px] w-full"></div>
-                          <div class="absolute top-2 w-full text-center text-xs timeLength">Hello</div>
-                      </div>
-                      <div class="rounded-full border-[#ccc] border-2 h-2 w-2"></div>
-                  </span>
-                  <span class="finishTime text-xl text-center font-bold w-[3rem]"></span>
-                  <span class="dst mr-3 text-right text-lg w-20"></span>
+      return `
+          <div id="ticket-${uniqueKey}" class="flex flex-col lg:flex-row card-box border p-8 mx-8 mb-16  shadow-sm">
+              <div class="flex flex-col lg:flex-row items-center justify-between flex-1 p-4 text-title">
+                  <div class="flex w-full lg:w-[60%] items-center py-6 px-2">
+                      <span class="src ml-2 text-left text-lg w-20"></span>
+                      <span class="startTime text-xl text-center font-bold w-[3rem]"></span>
+                      <span
+                          class="stops flex grow items-center justify-between text-grays-200 relative mx-3 md:mx-5 max-w-[12rem] text-[#aaa]"
+                          style="margin-left: 0.5rem;">
+                          <svg
+                              viewBox="0 0 24 24"
+                              width="1rem"
+                              height="1rem"
+                              fill="currentColor"
+                          >
+                              <path
+                                  d="M.601 12.008c0 .929.297 1.545 1.003 1.857.392.172.802.226 1.46.22l.362-.009 5.656-.24.26.368.326.493.42.659.87 1.41 1.573 2.626 1.678 2.855a2.204 2.204 0 0 0 1.858 1.155.9.9 0 0 0 .878-1.198l-3.018-8.582c-.008-.021-.002-.03.006-.03l6.447-.29.79 2.114.035.13c.257.593.77.862 1.287.761.61-.12 1.008-.711.889-1.322l-.005-.09.009-5.947c.05-.488-.338-1.007-.9-1.12-.546-.107-1.029.189-1.246.665l-.832 2.22-6.446-.29a.013.013 0 0 1-.011-.017l3.179-8.595a.9.9 0 0 0-.92-1.209l-.161.014c-.69.02-1.352.4-1.754 1.013L12.426 4.8l-1.21 2.02-.8 1.308-.54.86-.45.693-.238.347-.107.149-5.602-.264h-.623l-.16.007-.206.016c-1.287.127-1.889.767-1.889 2.072Z"
+                                  fill-rule="evenodd"
+                              ></path>
+                          </svg>
+                          <div class="flex flex-col flex-1 relative">
+                              <div class="bg-[#ccc] h-[1px] w-full"></div>
+                              <div class="absolute top-2 w-full text-center text-xs timeLength whitespace-nowrap"></div>
+                          </div>
+                          <div class="rounded-full border-[#ccc] border-2 h-2 w-2"></div>
+                      </span>
+                      <span class="finishTime text-xl text-center font-bold w-[3rem]"></span>
+                      <span class="dst mr-3 text-right text-lg w-20"></span>
+                  </div>
+                  <div class="px-6 mt-24 lg:mt-0">
+                      <span class="departing"></span>
+                  </div>
+                  <div class="w-[8rem] pr-6 mt-24 lg:mt-0">
+                      <span class="type"></span>
+                  </div>
               </div>
-              <div class="px-6">
-                  <span class="departing"></span>
-              </div>
-              <div class="w-[8rem] pr-6">
-                  <span class="type"></span>
+              <div class="w-full lg:w-[18rem] p-16 pt-0 lg:p-4 flex flex-col items-center justify-center">
+   
+                <div class="mt-6 self-end lg:self-center">
+                  <span class="price text-2xl text-primary-dark font-bold"></span> <span class="text-[#999]">تومان</span>
+                </div>
+    
+                <div class="my-2 w-full">
+                  <button class="py-3 w-full rounded bg-primary-light hover:bg-primary-dark text-black">خرید بلیط</button>
+                </div>
+                <div class="limitedSeats text-red-500">ظرفیت محدود است</div>
               </div>
           </div>
-          <div class="w-[18rem] p-4 flex flex-col items-center justify-center">
-
-            <div class="mt-6">
-              <span class="price text-2xl text-primary-dark font-bold"></span> <span class="text-[#999]">تومان</span>
-            </div>
-
-            <div class="my-2">
-              <button class="py-3 w-[10rem] rounded bg-primary-light hover:bg-primary-dark text-black">خرید بلیط</button>
-            </div>
-            <div class="limitedSeats text-red-500">ظرفیت محدود است</div>
-          </div>
-        </div>
-    `;
+      `;
   }
 }

@@ -19,6 +19,8 @@ export default class extends AbstractView {
             data[tmp[0]] = tmp[1];
         }
 
+        document.getElementsByTagName('SearchTickets')[0].setAttribute('data-info', JSON.stringify(data))
+
         const mockData = [
             {
                 startTime: Date.now() + Math.floor((3 + Math.random() * 5)*60*60*1000),
@@ -44,8 +46,6 @@ export default class extends AbstractView {
             }
         ]
 
-        console.log(mockData)
-        
         document.querySelector('#data').innerHTML = mockData.map((item, i) => {
             return `<Ticket
                 src="${item.src}"
@@ -100,10 +100,10 @@ export default class extends AbstractView {
     async getHtml() {
         return `
         <div
-            class="bg-white w-full py-10"
+            class="w-full py-10"
             id="search-tickets-header"
         >
-            <div class="flex w-full items-center justify-center w-bold whitespace-nowrap text-[#444]" id="search-tickets-header-static"> 
+            <div class="flex w-full items-center justify-center w-bold whitespace-nowrap text-title text-[12px] md:text-[15px]" id="search-tickets-header-static"> 
                 <svg
                     viewBox="0 0 24 24"
                     width="1.5rem"
@@ -157,7 +157,7 @@ export default class extends AbstractView {
             </div>
         </div>
         <main class="mx-auto w-full max-w-[1200px] px-8">
-            <h1 class="text-title text-[32px] mt-14 mb-10 mr-2">صفحه‌ی لیست بلیط‌ها</h1>
+            <h1 class="text-title text-[32px] mb-10 mr-2">صفحه‌ی لیست بلیط‌ها</h1>
             <div id="data" class="mb-20"></div>
         </main>
         `;

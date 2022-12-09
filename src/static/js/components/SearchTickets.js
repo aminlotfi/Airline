@@ -18,6 +18,25 @@ export default class extends AbstractView {
         const decreasePassengers = document.querySelector('.decreasePassengers')
         const searchBtn = document.querySelector('#searchBtn')
 
+
+        if (props['data-info']) {
+            const data = JSON.parse(props['data-info'])
+            src.value = data.src
+            dst.value = data.dst
+            if (data.returning) {
+                tripType.value = 'return'
+                returnDate.value = data.returning
+                returnDate.disabled = false;
+                returnDateBox.classList.remove('opacity-40')
+            } else {
+                tripType.value = 'oneWay'
+                returnDate.disabled = true;
+                returnDateBox.classList.add('opacity-40')
+            }
+            departureDate.value = data.departing
+            passengers.value = data.passenger
+        }
+
         searchBtn.addEventListener('click', () => {
             let url = '/search-tickets?'
             url += `src=${src.value}&dst=${dst.value}&passenger=${passengers.value}&departing=${departureDate.value}`
@@ -50,24 +69,6 @@ export default class extends AbstractView {
                 passengers.value = parseInt(passengers.value) - 1
             }
         })
-
-        let url = document.location.href,
-            params = url.split('?')[1].split('&'),
-            data = {}, tmp;
-        for (let i = 0, l = params.length; i < l; i++) {
-            tmp = params[i].split('=');
-            data[tmp[0]] = tmp[1];
-        }
-
-        if (data.src)
-            src.value = data.src;
-        if (data.dst)
-            dst.value = data.dst;
-        if (data.departing)
-            departureDate.value = data.departing;
-        if (data.passenger)
-            passengers.value = data.passenger;
-
     }
 
     async getHtml(uniqueKey) {
