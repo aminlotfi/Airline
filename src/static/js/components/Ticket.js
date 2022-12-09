@@ -1,4 +1,3 @@
-// TODO Redundant component, just for testing
 import AbstractView from "../views/AbstractView.js";
 
 export default class extends AbstractView {
@@ -19,6 +18,7 @@ export default class extends AbstractView {
       limitedSeats,
       price,
       type,
+      isPurchased,
     ] = [
       ticket.getElementsByClassName("src")[0],
       ticket.getElementsByClassName("dst")[0],
@@ -29,6 +29,7 @@ export default class extends AbstractView {
       ticket.getElementsByClassName("limitedSeats")[0],
       ticket.getElementsByClassName("price")[0],
       ticket.getElementsByClassName("type")[0],
+      ticket.getElementsByClassName("purchaseBox")[0]
     ];
 
     const locationMap = {
@@ -68,6 +69,10 @@ export default class extends AbstractView {
       "first-class": "فرست کلاس",
     };
     type.innerHTML = typeMap[props["type"]];
+
+    if (props["ispurchased"]) {
+      isPurchased.classList.add("hidden");
+    }
   }
 
   async getHtml(uniqueKey) {
@@ -107,12 +112,10 @@ export default class extends AbstractView {
                       <span class="type"></span>
                   </div>
               </div>
-              <div class="w-full lg:w-[18rem] p-16 pt-0 lg:p-4 flex flex-col items-center justify-center">
-   
+              <div class="purchaseBox w-full lg:w-[18rem] p-16 pt-0 lg:p-4 flex flex-col items-center justify-center">
                 <div class="mt-6 self-end lg:self-center">
                   <span class="price text-2xl text-primary-dark font-bold"></span> <span class="text-[#999]">تومان</span>
                 </div>
-    
                 <div class="my-2 w-full">
                   <button class="py-3 w-full rounded bg-primary-light hover:bg-primary-dark text-black">خرید بلیط</button>
                 </div>
