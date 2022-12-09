@@ -50,6 +50,24 @@ export default class extends AbstractView {
                 passengers.value = parseInt(passengers.value) - 1
             }
         })
+
+        let url = document.location.href,
+            params = url.split('?')[1].split('&'),
+            data = {}, tmp;
+        for (let i = 0, l = params.length; i < l; i++) {
+            tmp = params[i].split('=');
+            data[tmp[0]] = tmp[1];
+        }
+
+        if (data.src)
+            src.value = data.src;
+        if (data.dst)
+            dst.value = data.dst;
+        if (data.departing)
+            departureDate.value = data.departing;
+        if (data.passenger)
+            passengers.value = data.passenger;
+
     }
 
     async getHtml(uniqueKey) {
