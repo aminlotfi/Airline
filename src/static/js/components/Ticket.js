@@ -8,6 +8,11 @@ export default class extends AbstractView {
   async getJs(props, uniqueKey) {
     let ticket = document.querySelector(`#ticket-${uniqueKey}`);
     const passengersInfoWrapper = ticket.querySelector("#passengersInfo");
+    const buyTicket = ticket.querySelector("#buyTicket");
+
+    buyTicket.addEventListener("click", () => {
+      window.navigateTo('/buy-ticket')
+    })
 
     const [
       src,
@@ -154,7 +159,7 @@ export default class extends AbstractView {
                         <span class="price text-2xl text-primary-dark font-bold"></span> <span class="text-[#999]">تومان</span>
                       </div>
                       <div class="my-2 w-full">
-                        <button class="py-3 w-full rounded bg-primary-light hover:bg-primary-dark text-black">خرید بلیط</button>
+                        <button id="buyTicket" class="py-3 w-full rounded bg-primary-light hover:bg-primary-dark text-black">خرید بلیط</button>
                       </div>
                       <div class="limitedSeats text-red-500">ظرفیت محدود است</div>
                   </div>
