@@ -1108,7 +1108,10 @@ export default class extends AbstractView {
                 </td></tr>
                 </table>
             </div>
-            
+
+            <a href="">
+            <button class="w-3/4 mx-32 my-4 border-2 place-self-center rounded-lg border-sky-600 text-sky-500 hover:bg-blue-100 py-8 px-32"> ادامه‌ی خرید</button>
+            </a>
         </main>
         `;
         return theHtml;
